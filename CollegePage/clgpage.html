@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        .nav ul{
+            list-style-type: none;
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(16, 16, 50);
+        }
+        .nav li{
+            float:left;
+            border-right: 1px solid palevioletred;
+        }
+        .nav li:last-child{
+            border-right: none;
+        }
+        .nav li a{
+            display: block;
+            text-decoration: none;
+            padding: 14px 10px;
+            color: white;
+        }
+        .nav li a:hover{
+            background-color: cadetblue;
+            color: black;
+        }
+        .row{
+            display: flex;
+        }
+        .c1{
+            flex: 30%;
+            border: 2px solid palevioletred;
+            margin-left: 100px;
+        }
+        .notif{
+            flex:70%;
+            border: 2px solid palevioletred;
+            margin-right: 100px;
+            width:600px;
+            height:300px;
+        }
+        .notif p{
+            background-color: palevioletred;
+            text-align: center;
+            color: white;
+            padding:20px;
+            font-size: 30px;
+        }
+        .notif ul{
+            width:600px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img class="left" src="logo.jpg" alt="logo" height="200px" width="250px">
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">Academics</a></li>
+            <li><a href="#">Exams</a></li>
+            <li><a href="#">Research & Consultancy</a></li>
+            <li><a href="#">Innovation & Entrepreneurship</a></li>
+            <li><a href="#">Training & Placements</a></li>
+            <li><a href="#">Industry Relations</a></li>
+            <li><a href="#">Campus Life</a></li>
+        </ul>
+    </div>
+    <section>
+        <img class="mySlides" src="mbu.jpg" style="width:100%">
+        <img class="mySlides" src="lib.jpg" style="width:100%">
+        <img class="mySlides" src="aud.jpg" style="width:100%">
+      </section>
+      
+      <script>
+      var myIndex = 0;
+      carousel();
+      
+      function carousel() {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        myIndex++;
+        if (myIndex > x.length) {myIndex = 1}
+        x[myIndex-1].style.display = "block";
+        setTimeout(carousel, 3000);
+      }
+      </script>
+      <div class="row">
+        <div class="c1">
+            <iframe name="m" src="col.html" width="400px"; height="300px" ; boxshadow="20px"></iframe>
+        </div>
+        <div class="notif">
+            <p>Notifications</p>
+            <ul>
+                <li>An Online National Conference on Knowledge, Innovations and Technologies for Sustainability – 2022(NCKITS-22)</li>
+                <li>Recruitment Notification and Application for the Post of Project Associate for AMT-DST Funded Project “Development of Automated Fixture for Friction Stir Welding of Defence grade AA5083/AA7075 Pipes” (Adv. No. SVEC/ME/AMT-DST/1/2022)</li> 
+                <li>Tender Notice for AICTE IDEA LAB</li> 
+                <li> Resume of Class work Off-Line</li> 
+                <li> Classwork and Sankranti Holidays</li> 
+             </ul>
+        </div>
+    </div>
+</body>
+</html>

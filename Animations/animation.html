@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ANIMATION</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas"></canvas>
+    <script>
+    var canvas=document.getElementById("mycanvas");
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    var c=canvas.getContext("2d");
+    <!--var x=Math.random()*innerWidth,var y=Math.random()*innerHeight-->
+    var x=200;
+    var dx=5;
+    var y=200;
+    var dy=5;
+    var radius=35;
+    function animate(){
+        requestAnimationFrame(animate);
+        c.clearRect(0,0,innerWidth,innerHeight);
+        c.beginPath();
+        c.arc(x,y,radius,0,Math.PI*2,false);
+        c.strokeStyle="blue";
+        c.fillStyle="orange"; 
+        c.stroke();
+        if(x+radius>innerWidth || x-radius<0){
+            dx=-dx;
+        }
+        if(y+radius>innerHeight || y-radius<0){
+            dy=-dy;
+        }
+        x+=dx;
+        y+=dy;
+    }
+    animate();
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Canvas</title>
+</head>
+<body>
+  <div style="margin-left: 30px;">
+    <p><button onclick="myCanvas()">Try it</button></p>
+<p>Image to use:</p>
+<img id="scream" src="mehandi.jpg" alt="The Scream" width="220" height="277">
+
+<p class="right">Canvas to fill:</p>
+<canvas id="myCanvas" width="250" height="300"
+style="border:1px solid #d3d3d3;">
+</canvas>
+<p class="left"><button onclick="myCanvas1()">Try it</button></p>
+<canvas id="myCanvas1" width="200" height="100">
+</canvas>
+<p><button onclick="myCanvas2()">Try it</button></p>
+<canvas id="myCanvas2" width="200" height="100"
+style="border:1px solid #d3d3d3;">
+</canvas>
+<p><button onclick="myCanvas3()">Try it</button></p>
+<canvas id="myCanvas3" width="200" height="100"
+style="border:1px solid #d3d3d3;">
+</canvas>
+  </div>
+<script>
+function myCanvas() {
+  var c = document.getElementById("myCanvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("scream");
+  ctx.drawImage(img,10,10);
+}</script>
+<script>
+function myCanvas1(){
+  var c = document.getElementById("myCanvas1");
+  var ctx = c.getContext("2d");
+  var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+  grd.addColorStop(0, "red");
+  grd.addColorStop(1, "white");
+  ctx.fillStyle = grd;
+  ctx.fillRect(10, 10, 150, 80);
+}
+</script>
+<script>
+    function myCanvas2(){
+    var c = document.getElementById("myCanvas2");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.fillText("Bhavana", 10, 50);}
+</script>
+<script>
+    function myCanvas3(){
+    var c = document.getElementById("myCanvas3");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.strokeText("Bhavana", 10, 50);}
+</script>
+</body>
+</html>

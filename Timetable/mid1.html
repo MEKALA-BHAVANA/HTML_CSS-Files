@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Time Table</title>
+    <script>
+        function info(x){
+            if(x=="IoT"){
+                alert("Internet Of Things dealed by Anitha Maam");
+            }
+    
+            if(x=="BDT"){
+                alert("Big Data Technologies dealed by Poojitha Maam");
+            }
+            if(x=="WT"){
+                alert("Web Technologies dealed by Yogendra Prasad Sir");
+            }
+            if(x=="ML"){
+                alert("Machine Learning dealed by Sivanantham Sir");
+            }
+            if(x=="FOE"){
+                alert("Foundations of Entreprenurship dealed by Sreenivasulu Sir");
+            }
+            if(x=="PBEA"){
+                alert("Principles of Business and Accounts dealed by Venkatesh Sir");
+            }
+        }
+        function fullname(d){
+            if(d=='MON'){
+            document.getElementById("day1").innerHTML="MONDAY";}
+            if(d=='TUE'){
+            document.getElementById("day2").innerHTML="TUESDAY";}
+            if(d=='WED'){
+            document.getElementById("day3").innerHTML="WEDNESDAY";}
+            if(d=='THU'){
+            document.getElementById("day4").innerHTML="THURSDAY";}
+            if(d=='FRI'){
+            document.getElementById("day5").innerHTML="FRIDAY";}
+        }
+        function period(d){
+            var x=d;
+            document.getElementById(x).innerHTML="Liesure";
+        }
+        function timings(){
+            var x="Timings cannot be modified";
+            document.getElementById("table").innerHTML='';
+            document.getElementById("msg").innerHTML=x;
+        }
+    </script>
+    <style>
+        p{
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <table align="center" border="2" cellspacing="0" cellpadding="15" id="table">
+        <style>
+            tr{
+                text-align: center;
+            }
+            td:hover{
+               background-color: aqua; 
+               font-size: 30px;
+            }
+        </style>
+        <tr onclick="timings()">
+            <th>DAY/<br>HR</th>
+            <th>10:00 AM<br>TO<br>11:00 AM</th>
+            <th>11:00 AM<br>TO<br>12:00 AM</th>
+            <th>12:00 AM<br>TO<br>01:00 PM</th>
+            <th rowspan="6">L<br>U<br>N<br>C<br>H<br>B<br>R<br>E<br>A<br>K</th>
+            <th>02:00 PM<br>TO<br>03:00 PM</th>
+            <th>03:00 PM<br>TO<br>04:00 PM</th>
+            <th>04:00 PM<br>TO<br>05:00 PM</th>
+        </tr>
+        <tr>
+            <th ondblclick="fullname(this.innerHTML)" id="day1">MON</th>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td1">IS</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td2">IS</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td3">WT</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td4">FOE</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td5">PEBA</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td6">ML</td>
+        </tr>
+        <tr>
+            <th ondblclick="fullname(this.innerHTML)" id="day2">TUE</th>
+            <td colspan="3">ML LAB<br>Room No:E & F</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td7">IoT</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td8">BDT</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td9">PBEA</td>
+        </tr>
+        <tr>
+            <th ondblclick="fullname(this.innerHTML)" id="day3">WED</th>
+            <td colspan="3">WT LAB<br>Room No:408</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td10">BDT</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td11">ML</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td12">WT</td>
+        </tr>
+        <tr>
+            <th ondblclick="fullname(this.innerHTML)" id="day4">THU</th>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td13">ML</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td14">IS</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td15">IOT</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td16">PBEA</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td17">BDT</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td18">FOE</td>
+        </tr>
+        <tr>
+            <th ondblclick="fullname(this.innerHTML)" id="day5">FRI</th>
+            <td colspan="3">DAD LAB<br>Room No:408</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td19">BDT</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td20">IOT</td>
+            <td ondblclick="period(this.id)" onclick="info(this.innerHTML)" id="td21">IS</td>
+        </tr>
+    </table>
+    <center>
+        <p id="msg"></p>
+    </center>
+</body>
+</html>

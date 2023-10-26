@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Deactivation Form</title>
+    <style>
+        form{
+            border: 2px solid black;
+            width: 500px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1 style="text-align: center;">DEACTIVATE ACCOUNT</h1>
+    <form>
+        <br><br>
+    <label for="Uname">User Name:</label>
+    <input type="text" id="uname" name="uname" required><br><br>
+    <label for="passwd">Password:</label>
+    <input type="password" id="passwd" name="pwd" required><br><br>
+    <label>Why are you deleting your account?</label><br>
+    <input type="radio" id="r1" name="reason" value="reason1">
+    <label for="r1">Trouble getting started</label><br>
+    <input type="radio" id="r2" name="reason" value="reason2">
+    <label for="r2">Privacy concerns</label><br>
+    <input type="radio" id="r3" name="reason" value="reason3">
+    <label for="r3">Too distracting</label><br>
+    <input type="radio" id="r4" name="reason" value="other">
+    <label for="r4">Something else..</label><br><br>
+    <textarea rows="5" cols="25"></textarea><br><br>
+    <label>Any Suggestions?</label><br><br>
+    <textarea rows="5" cols="25"></textarea><br><br>
+    <input type="submit" value="DEACTIVATE"><br><br>
+</form>
+    </center>
+</body>
+</html>

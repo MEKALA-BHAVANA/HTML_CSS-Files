@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 Moon Glowing Animation</title>
+	<style>
+		canvas {
+			border: 1px solid #000000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="400"></canvas>
+
+	<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		// Define the moon
+		var moon = {
+			x: canvas.width / 2,
+			y: canvas.height / 2,
+			radius: 50,
+			color: "#FFFF00",
+			gradient: null
+		};
+
+		// Create the moon gradient
+		function createMoonGradient() {
+			moon.gradient = ctx.createRadialGradient(moon.x, moon.y, 0, moon.x, moon.y, moon.radius);
+			moon.gradient.addColorStop(0, "#FFFF00");
+			moon.gradient.addColorStop(0.5, "#FFFF00");
+			moon.gradient.addColorStop(1, "#000000");
+		}
+
+		// Draw the moon
+		function drawMoon() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.fillStyle = moon.gradient;
+			ctx.beginPath();
+			ctx.arc(moon.x, moon.y, moon.radius, 0, 2 * Math.PI);
+			ctx.fill();
+		}
+
+		// Update the moon glow
+		function updateMoonGlow() {
+			var now = new Date().getTime();
+			var glow = Math.sin(now / 1000 * Math.PI) * 0.5 + 0.5;
+			moon.gradient = ctx.createRadialGradient(moon.x, moon.y, 0, moon.x, moon.y, moon.radius);
+			moon.gradient.addColorStop(0, "#FFFF00");
+			moon.gradient.addColorStop(0.5, "#FFFF00");
+			moon.gradient.addColorStop(1, "rgba(0, 0, 0, " + glow + ")");
+		}
+
+		// Start the animation loop
+		function animate() {
+			updateMoonGlow();
+			drawMoon();
+			window.requestAnimationFrame(animate);
+		}
+
+		createMoonGradient();
+		animate();
+	</script>
+</body>
+</html>

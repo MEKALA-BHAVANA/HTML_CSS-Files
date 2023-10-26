@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        button{
+            background-color: blueviolet;
+            width:100px;
+            height:30px;
+        }
+        #more{
+            display:none;
+        }
+        p{
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <img src="m.jpg" width="350px" height="200px">
+        Sree Vidyanikethan Education Trust (SVET) was established in 1992, it has surpassed many a milestone. As an individual, I have the best memories<span id="dots">...</span><span id="more"> and biggest learning experiences in life.
+        I believe every individual deserves best knowledge to lead a better life and knowledge comes with learning – one that is based on doing things right and not merely knowing about how to do them.
+        Learning solutions should be relative to real life, thereby motivating the learner towards gaining and applying the imbibed knowledge, disconnecting the superficial parts and connecting sensible aspects.
+        <br>
+        At SVEC, our purpose is to transform young aspirers into exceptional professionals, our mission is to enhance the aptitudes of those who walk in to acquire knowledge and our dream is to give every young child access to best education and progression in life. Today, I am so glad and happy to see SVEC positioned as one of the best colleges for engineering in India.</span>
+        </p>
+        <button onclick="myFunction()" id="myBtn">Read more</button>
+        <script>
+            function myFunction() {
+              var dots = document.getElementById("dots");
+              var moreText = document.getElementById("more");
+              var btnText = document.getElementById("myBtn");
+            
+              if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more"; 
+                moreText.style.display = "none";
+              } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Read less"; 
+                moreText.style.display = "inline";
+              }
+            }
+            </script>
+</body>
+</html>

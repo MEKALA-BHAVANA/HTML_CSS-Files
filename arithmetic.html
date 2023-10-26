@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS functions</title>
+    <script>
+        function add(){
+            var num1=Number(document.getElementById("num1").value);
+            var num2=Number(document.getElementById("num2").value);
+            c= num1+num2
+            document.getElementById("res").value=c;
+        }
+        function sub(){
+            var num1=Number(document.getElementById("num1").value);
+            var num2=Number(document.getElementById("num2").value);
+            c= num1-num2
+            document.getElementById("res").value=c;
+        }
+        function mul(){
+            var num1=Number(document.getElementById("num1").value);
+            var num2=Number(document.getElementById("num2").value);
+            c= num1*num2
+            document.getElementById("res").value=c;
+        }
+        function div(){
+            var num1=Number(document.getElementById("num1").value);
+            var num2=Number(document.getElementById("num2").value);
+            c= num1/num2
+            document.getElementById("res").value=c;
+        }
+        function mod(){
+            var num1=Number(document.getElementById("num1").value);
+            var num2=Number(document.getElementById("num2").value);
+            c= num1%num2
+            document.getElementById("res").value=c;
+        }
+
+    </script>
+</head>
+<body><center>
+   <form action="">
+   <label>Enter a number:</label> <input type="text" id="num1">
+   <label>Enter a number:</label> <input type="text" id="num2"><br><br><br><br>
+    <input type="button" value="ADD" onclick="add()">
+    <input type="button" value="SUB" onclick="sub()">
+    <input type="button" value="MUL" onclick="mul()">
+    <input type="button" value="DIV" onclick="div()">
+    <input type="button" value="MOD" onclick="mod()"><br><br>
+    Get Result: <input type="text" id="res">
+   </form> 
+   </center>
+</body>
+</html>

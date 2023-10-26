@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 Animation with Mouse Drag</title>
+	<style>
+		canvas {
+			border: 1px solid #000000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="400" height="400"></canvas>
+
+	<script>
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		// Define the rectangle
+		var rect = {
+			x: 50,
+			y: 50,
+			width: 100,
+			height: 100,
+			dragging: false
+		};
+
+		// Draw the rectangle
+		function drawRect() {
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.fillStyle = "#FF0000";
+			ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+		}
+
+		// Check if the mouse is within the rectangle
+		function isMouseInRect(x, y) {
+			return (x >= rect.x && x <= rect.x + rect.width && y >= rect.y && y <= rect.y + rect.height);
+		}
+
+		// Handle mouse events
+		canvas.addEventListener("mousedown", function(e) {
+			if (isMouseInRect(e.clientX, e.clientY)) {
+				rect.dragging = true;
+			}
+		});
+
+		canvas.addEventListener("mouseup", function(e) {
+			rect.dragging = false;
+		});
+
+		canvas.addEventListener("mousemove", function(e) {
+			if (rect.dragging) {
+				rect.x = e.clientX - rect.width / 2;
+				rect.y = e.clientY - rect.height / 2;
+				drawRect();
+			}
+		});
+
+		// Start the animation loop
+		function animate() {
+			drawRect();
+			window.requestAnimationFrame(animate);
+		}
+
+		animate();
+	</script>
+</body>
+</html>

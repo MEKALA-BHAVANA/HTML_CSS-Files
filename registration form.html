@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registartion form</title>
+    <style>
+        form{
+            border: 2px solid black;
+            width: 500px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h2 style="font-size:35px;">COURSE REGISTRATION</h2><br>
+    <form>
+        <br><br>
+    First Name: <input type="text" id="fname" name="fname" required><br><br>
+    <label for="mname">Middle Name:</label>
+    <input type="text" id="lname" name="mname"><br><br>
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname" required><br><br>
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required><br><br>
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Prefer not to say</label><br><br>
+    <label for="phno">Phone:</label>
+    <input type="text" id="phno" name="country code" value="+91" size="1"/>
+    <input type="text" id="phno" name="phone" size="10"/><br><br>
+    <label for="course">Choose your Course</label>
+    <select id="course" name="course">
+        <option value="Course">Course</option>
+        <option value="B.tech">B.Tech</option>
+        <option value="MBA">MBA</option>
+        <option value="MCA">MCA</option>
+        <option value="M.tech">M.Tech</option>
+    </select><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="passwd">Password:</label>
+    <input type="password" id="passwd" name="pwd" required><br><br>
+    <input type="submit" value="Register">
+    <input type="reset"><br><br><br>
+    </form>>
+</center>
+</body>
+</html>

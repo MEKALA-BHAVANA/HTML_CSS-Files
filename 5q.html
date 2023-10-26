@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Registration</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>User Registration</h1>
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
+
+  <div class="container" id="loginContainer" style="display: none;">
+    <h1>Login</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="loginUsername">Username:</label>
+        <input type="text" class="form-control" id="loginUsername" required>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password:</label>
+        <input type="password" class="form-control" id="loginPassword" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+
+  <div class="container" id="loggedInContainer" style="display: none;">
+    <h1>Welcome, <span id="loggedInUsername"></span>!</h1>
+    <p>Login attempts: <span id="loginAttempts"></span></p>
+    <button class="btn btn-primary" onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    // Function to set a cookie
+    function setCookie(name, value) {
+      document.cookie = name + "=" + value + "; path=/";
+    }
+
+    // Function to get a cookie value
+    function getCookie(name) {
+      var cookies = document.cookie.split("; ");
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].split("=");
+        if (cookie[0] === name) {
+          return cookie[1];
+        }
+      }
+      return null;
+    }
+
+    // Function to delete a cookie
+    function deleteCookie(name) {
+      document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+
+    // Function to handle registration form submission
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Set the login attempts to zero for the new user
+      sessionStorage.setItem(username + "_loginAttempts", "0");
+
+      // Set the login details in cookies
+      setCookie(username + "_username", username);
+      setCookie(username + "_password", password);
+
+      alert("Registration successful! You can now login.");
+      document.getElementById("registrationForm").reset();
+
+      // Show the login form
+      document.getElementById("loginContainer").style.display = "block";
+      document.getElementById("loggedInContainer").style.display = "none";
+    });
+
+    // Function to handle login form submission
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var username = document.getElementById("loginUsername").value;
+      var password = document.getElementById("loginPassword").value;
+
+      // Get the stored login details from cookies
+      var storedUsername = getCookie(username + "_username");
+      var storedPassword = getCookie(username + "_password");
+
+      if (storedUsername && storedPassword && storedUsername === username && storedPassword === password) {
+        // Get the current login attempts for the user
+        var loginAttempts = sessionStorage.getItem(username + "_loginAttempts");
+        loginAttempts = loginAttempts ? parseInt(loginAttempts) : 0;
+
+        // Increment the login attempts
+        loginAttempts++;
+
+        // Store the updated login attempts in session storage
+        sessionStorage.setItem(username + "_loginAttempts", loginAttempts.toString());
+
+        // Display the login information
+        document.getElementById("loggedInUsername").textContent = username;
+        document.getElementById("loginAttempts").textContent = loginAttempts.toString();
+
+        // Hide the login form and show the logged-in section
+        document.getElementById("loginContainer").style.display = "none";
+        document.getElementById("loggedInContainer").style.display = "block";
+      } else {
+        alert("Invalid username or password.");
+      }
+
+      document.getElementById("loginForm").reset();
+    });
+
+    // Function to handle logout button click
+    function logout() {
+      // Get the logged-in username
+      var username = document.getElementById("loggedInUsername").textContent;
+
+      // Reset the login attempts to zero
+      sessionStorage.setItem(username + "_loginAttempts", "0");
+
+      // Hide the logged-in section and show the login form
+      document.getElementById("loginContainer").style.display = "block";
+      document.getElementById("loggedInContainer").style.display = "none";
+    }
+  </script>
+</body>
+</html>

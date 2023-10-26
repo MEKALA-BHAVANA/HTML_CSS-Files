@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .header{
+            padding: 10px;
+            background-color: rgb(255, 194, 240);
+            font-size: 30px;
+            text-align: center;
+        }
+        .header img{
+            float: left;
+            margin: 20px;
+        }
+        .nav ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:aqua;
+            border-bottom:1px solid black;
+        }
+        .nav li{
+            float: left;
+            border-right: 1px solid white;
+        }
+        .nav li:last-child{
+            border-right: none;
+        }
+        .nav li a{
+            display: block;
+            text-align: center;
+            padding:14px 100px;
+            text-decoration: none;
+            color: black;
+        }
+        .nav li a.active{
+            background-color: blue;
+            color: white;
+        }
+        .nav li a:hover:not(.active), .nav1 li a:hover{
+            background-color: black;
+            color: white;
+        }
+        .nav1 ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 15.5%;
+            height: 100%;
+            background-color:aqua;
+            position: fixed;
+            overflow: auto;
+            border-right: 1px solid black;
+        }
+        .nav1 li{
+            border-bottom: 1px solid white;
+        }
+        .nav1 li a{
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 14px 10px;
+        }
+        .nav1 li:last-child{
+            border-bottom: none;
+        }
+        .row{
+            display: flex;
+        }
+        .nav1{
+            flex:18%;
+        }
+        .des{
+            flex:55%;
+            border: 2px dotted black;
+        }
+        .form{
+            flex:30%;
+            border: 2px solid black;
+            width: 200px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="book.jpg" alt="logo" width="200px" height="100px">
+        <h1>Ganapathy Book Store</h1>
+    </div>
+<div class="nav">
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#">Latest Arrivals</a></li>
+    <li><a href="#">Best Sellers</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">Search</a></li>
+  </ul> 
+</div>
+<div class="row">
+  <div class="nav1">
+    <ul>
+   <li><a href="computer.html" target="display">Computers</a></li>
+   <li><a href="computer.html" target="display">Electronics</a></li>
+   <li><a href="computer.html" target="display">Electrical</a></li>
+   <li><a href="computer.html" target="display">Bio-Tech</a></li>
+  </ul>
+  </div>
+  <div class="des" name="display1">
+   <iframe name="display" src="display.html" width="860px"; height="500px" ;></iframe>
+  </div>
+  <div class="form">
+    <center><br><br>
+   <input type="email" id="email" style="height: 40px; width:280px;" placeholder="Username"><br><br>
+   <input type="password" id="passwd" name="pwd"style="height: 40px; width:280px;" placeholder="Password" required><br><br>
+    <input type="submit" style="height: 40px; width:150px;" value="Sign-in"><br><br>
+    <p>New User</p><br>
+    <input type="submit" style="height: 40px; width:180px;" value="Create an Account"><br><br>
+   </center>
+  </div>
+</div>
+</body>
+</html>

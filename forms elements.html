@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Forms</title>
+</head>
+<body>
+    <h2>Enter Details</h2>
+    First Name: <input type="text" id="fname" name="fname" required><br>
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname" value="Mekala" disabled><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br>
+    <label for="passwd">Password:</label>
+    <input type="password" id="passwd" name="pwd" required><br>
+    <input type="submit">
+    <input type="reset">
+    <label for="favclr">Choose a color</label>
+    <input type="color" id="favclr"><br>
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" required><br>
+    <h3>Choose Fav Subject</h3>
+    <input type="radio" id="java" name="favlang" value="JAVA">
+    <label for="java">JAVA</label>
+    <input type="radio" id="html" name="favlang" value="HTML">
+    <label for="html">HTML</label>
+    <input type="radio" id="C" name="favlang" value="C">
+    <label for="C">C</label>
+    <h3>Choose your favourite fruits</h3>
+    <input type="checkbox" id="mango" name="fav" value="MANGO">
+    <label for="mango">MANGO</label>
+    <input type="checkbox" id="grape" name="fav" value="GRAPE">
+    <label for="grape">GRAPE</label>
+    <input type="checkbox" id="apple" name="fav" value="APPLE">
+    <label for="apple">APPLE</label><br>
+    <input type="file"><br><br>
+    <label for="subjects">Choose your subject</label>
+    <select id="subjects" name="subjects">
+        <option value="Maths">MATHS</option>
+        <option value="Physics">PHYSICS</option>
+        <option value="Science">SCIENCE</option>
+    </select><br><br>
+    <button input type="button" onclick="alert('welcome')">Click</button><br><br>
+    <textarea rows="5" cols="10">Comments</textarea>
+   </form>
+</body>
+</html>

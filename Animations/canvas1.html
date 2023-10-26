@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Drawing shapes</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mycanvas"></canvas>
+    <script>
+    var canvas=document.getElementById("mycanvas");
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    var c=canvas.getContext("2d");
+    c.fillStyle="blue";
+    c.fillRect(10,10,50,50);
+    c.fillStyle="red";
+    c.fillRect(20,20,50,50);
+    c.beginPath();
+    c.moveTo(50,70);
+    c.lineTo(30,80);
+    c.lineTo(40,10);
+    c.stroke();
+    c.beginPath();
+    c.arc(150,70,35,0,Math.PI*2,false);
+    c.strokeStyle="blue";
+    c.stroke();
+    var circleArray=[];
+    for(var i=0;i<25;i++){
+        var x=Math.random()*window.innerWidth;
+        var y=Math.random()*window.innerHeight;
+        
+        c.beginPath();
+        c.arc(x,y,40,0,Math.PI*2,false);
+        c.strokeStyle="blue";
+        c.stroke();
+    }
+</script>
+</body>
+</html>
